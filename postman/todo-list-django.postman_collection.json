@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "b4c0f22b-a868-41db-afad-1c0f37a79091",
+		"name": "todo-list-django",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "1Mju5tT35+1nG",
+							"type": "text"
+						},
+						{
+							"key": "scope",
+							"value": "read",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/o/token/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"o",
+						"token",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get task detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer kSm691fSGBus5oYTqhLijbQ4FIMzJt",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tasks",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer kSm691fSGBus5oYTqhLijbQ4FIMzJt",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get tasks count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer kSm691fSGBus5oYTqhLijbQ4FIMzJt",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/tasks/count",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"count"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create tasks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer kSm691fSGBus5oYTqhLijbQ4FIMzJt",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test name\",\n    \"description\": \"test description\",\n    \"status\": \"pendiente\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/tasks/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Task",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer kSm691fSGBus5oYTqhLijbQ4FIMzJt",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"test name\",\n    \"description\": \"test description\",\n    \"status\": \"pendiente\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/tasks/2/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"tasks",
+						"2",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get users count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer kSm691fSGBus5oYTqhLijbQ4FIMzJt",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/users/count",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						"count"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

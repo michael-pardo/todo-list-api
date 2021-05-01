@@ -1,0 +1,23 @@
+version: '3.1'
+
+services:
+  todo-api-web:
+    build: .
+    image: todo-api:latest
+    container_name: todo-api-web
+    environment:
+      ENVIRONMENT: development
+    depends_on:
+      - db
+    volumes:
+      - .:/src
+      - ./scripts:/scripts
+    command: ["/scripts/command-dev.sh"]
+    ports:
+      - "8000:8000"
+
+  db:
+    image: postgres:11
+    container_name: todo-api-db
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: "trust"
