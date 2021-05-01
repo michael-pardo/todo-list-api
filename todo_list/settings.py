@@ -45,10 +45,13 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     # TODO: Check if this is necessary
     # 'rest_framework_swagger',
-    'tasks'
+    'tasks',
+    'corsheaders'
+
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -144,3 +147,5 @@ REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     # 'EXCEPTION_HANDLER': 'persons.views.handler500',
 }
+
+CORS_ALLOW_ALL_ORIGINS = True
